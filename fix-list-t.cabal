@@ -1,0 +1,68 @@
+cabal-version:      3.0
+name:               fix-list-t
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            BSD-2-Clause
+license-file:       LICENSE
+author:             1
+-- maintainer:
+-- copyright:
+category:           Data
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+  ghc-options:
+    -Wall
+    -O2
+    -threaded
+    -rtsopts "-with-rtsopts=-N8 -A64m -AL128m -I0 -M128M"
+
+  default-language:    Haskell2010
+
+  default-extensions:
+                       ApplicativeDo
+                     , BangPatterns
+                     , BlockArguments
+                     , ConstraintKinds
+                     , DataKinds
+                     , DeriveDataTypeable
+                     , DeriveGeneric
+                     , DerivingStrategies
+                     , DerivingVia
+                     , ExtendedDefaultRules
+                     , FlexibleContexts
+                     , FlexibleInstances
+                     , GADTs
+                     , GeneralizedNewtypeDeriving
+                     , ImportQualifiedPost
+                     , LambdaCase
+                     , MultiParamTypeClasses
+                     , OverloadedStrings
+                     , QuasiQuotes
+                     , ScopedTypeVariables
+                     , StandaloneDeriving
+                     , TupleSections
+                     , TypeApplications
+                     , TypeFamilies
+
+
+
+executable fix-list-t
+    import:           warnings
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.15.1.0
+                    , bytestring
+                    , list-t
+                    , streaming
+                    , cryptonite
+                    , memory
+                    , deepseq
+                    , timeit
+
+    hs-source-dirs:   .
+    default-language: Haskell2010

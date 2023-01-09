@@ -1,0 +1,4 @@
+packages:
+  .
+  deps/list-t/list-t.cabal
+
